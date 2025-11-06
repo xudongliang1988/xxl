@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>消防隐患消消乐</title>
-    <script src="./yhxxl/saved_resource"></script>
-    <link href="./yhxxl/font-awesome.min.css" rel="stylesheet">
-
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    
     <script>
         tailwind.config = {
             theme: {
@@ -27,7 +27,7 @@
             }
         }
     </script>
-
+    
     <style type="text/tailwindcss">
         @layer utilities {
             .content-auto {
@@ -75,369 +75,369 @@
     </style>
 </head>
 <body class="bg-fire-dark min-h-screen flex flex-col items-center p-0 m-0">
-<!-- 音效元素 -->
-<audio id="bgMusic" loop="" preload="auto" volume="0.3">
-    <source src="./mixkit-tech-house-vibes-130.mp3" type="audio/mpeg">
-</audio>
-<audio id="correctSound" preload="auto">
-    <source src="./mixkit-achievement-bell-600.mp3" type="audio/mpeg">
-</audio>
-<audio id="errorSound" preload="auto">
-    <source src="./5c89396f017e881994.mp3" type="audio/mpeg">
-</audio>
-
-<!-- 手机主容器 -->
-<div class="relative w-full h-screen overflow-hidden gradient-bg flex flex-col">
-    <!-- 声音控制按钮 -->
-    <div class="sound-control">
-        <button id="toggleSound" class="bg-white/20 hover:bg-white/30 text-white w-9 h-9 rounded-full flex items-center justify-center backdrop-blur-sm transition-all">
-            <i class="fa fa-volume-up"></i>
-        </button>
-    </div>
-
-    <!-- 游戏标题区 -->
-    <div class="pt-12 pb-4 px-4 text-center">
-        <h1 class="text-[clamp(1.3rem,5vw,1.8rem)] font-bold text-white flex items-center justify-center text-shadow">
-            <i class="fa fa-fire-extinguisher mr-2 animate-pulse"></i>消防隐患消消乐
-        </h1>
-        <p class="text-blue-100 mt-1 text-sm">识别隐患，守护安全！</p>
-    </div>
-
-    <!-- 游戏状态面板 -->
-    <div class="bg-white/90 backdrop-blur-sm rounded-xl p-3 mx-4 mb-4 shadow-md">
-        <div class="flex justify-between items-center">
-            <div class="flex items-center">
-                <div class="w-8 h-8 rounded-full bg-fire-blue flex items-center justify-center text-white mr-2">
-                    <i class="fa fa-clock-o text-sm"></i>
+    <!-- 音效元素 -->
+    <audio id="bgMusic" loop preload="auto" volume="0.2">
+        <source src="https://assets.mixkit.co/music/preview/mixkit-tech-house-vibes-130.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="correctSound" preload="auto">
+        <source src="https://assets.mixkit.co/sfx/preview/mixkit-achievement-bell-600.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="errorSound" preload="auto">
+        <source src="https://assets.mixkit.co/sfx/preview/mixkit-negative-guitar-tone-232.mp3" type="audio/mpeg">
+    </audio>
+    
+    <!-- 手机主容器 -->
+    <div class="relative w-full h-screen overflow-hidden gradient-bg flex flex-col">
+        <!-- 声音控制按钮 -->
+        <div class="sound-control">
+            <button id="toggleSound" class="bg-white/20 hover:bg-white/30 text-white w-9 h-9 rounded-full flex items-center justify-center backdrop-blur-sm transition-all">
+                <i class="fa fa-volume-up"></i>
+            </button>
+        </div>
+        
+        <!-- 游戏标题区 -->
+        <div class="pt-12 pb-4 px-4 text-center">
+            <h1 class="text-[clamp(1.3rem,5vw,1.8rem)] font-bold text-white flex items-center justify-center text-shadow">
+                <i class="fa fa-fire-extinguisher mr-2 animate-pulse"></i>消防隐患消消乐
+            </h1>
+            <p class="text-blue-100 mt-1 text-sm">识别隐患，守护安全！</p>
+        </div>
+        
+        <!-- 游戏状态面板 -->
+        <div class="bg-white/90 backdrop-blur-sm rounded-xl p-3 mx-4 mb-4 shadow-md">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <div class="w-8 h-8 rounded-full bg-fire-blue flex items-center justify-center text-white mr-2">
+                        <i class="fa fa-clock-o text-sm"></i>
+                    </div>
+                    <span class="text-fire-dark text-sm">用时: <span id="timer" class="font-bold text-fire-blue">00:00</span></span>
                 </div>
-                <span class="text-fire-dark text-sm">用时: <span id="timer" class="font-bold text-fire-blue">00:00</span></span>
-            </div>
-            <div class="flex items-center">
-                <div class="w-8 h-8 rounded-full bg-fire-accent flex items-center justify-center text-white mr-2">
-                    <i class="fa fa-star text-sm"></i>
+                <div class="flex items-center">
+                    <div class="w-8 h-8 rounded-full bg-fire-accent flex items-center justify-center text-white mr-2">
+                        <i class="fa fa-star text-sm"></i>
+                    </div>
+                    <span class="text-fire-dark text-sm">分数: <span id="score" class="font-bold text-fire-accent">0</span></span>
                 </div>
-                <span class="text-fire-dark text-sm">分数: <span id="score" class="font-bold text-fire-accent">0</span></span>
-            </div>
-            <div class="flex items-center">
-                <div class="w-8 h-8 rounded-full bg-red-500 flex items-center justify-center text-white mr-2">
-                    <i class="fa fa-exclamation-circle text-sm"></i>
+                <div class="flex items-center">
+                    <div class="w-8 h-8 rounded-full bg-red-500 flex items-center justify-center text-white mr-2">
+                        <i class="fa fa-exclamation-circle text-sm"></i>
+                    </div>
+                    <span class="text-fire-dark text-sm">剩余: <span id="remaining" class="font-bold text-red-500">8</span></span>
                 </div>
-                <span class="text-fire-dark text-sm">剩余: <span id="remaining" class="font-bold text-red-500">8</span></span>
             </div>
         </div>
-    </div>
-
-    <!-- 游戏控制按钮 -->
-    <div class="flex gap-3 mx-4 mb-4">
-        <button id="startBtn" class="flex-1 bg-fire-accent hover:bg-fire-accent/90 text-white py-3 px-4 rounded-lg transition-all flex items-center justify-center shadow-md">
-            <i class="fa fa-play mr-2"></i>开始游戏
-        </button>
-        <button id="resetBtn" class="flex-1 bg-fire-dark hover:bg-fire-dark/90 text-white py-3 px-4 rounded-lg transition-all flex items-center justify-center shadow-md">
-            <i class="fa fa-refresh mr-2"></i>重置
-        </button>
-    </div>
-
-    <!-- 游戏网格区域（3列布局，适合手机） -->
-    <div class="flex-1 overflow-y-auto px-3 pb-4">
-        <div id="gameGrid" class="grid grid-cols-3 gap-2.5">
-            <!-- 卡片将通过JS动态生成 -->
+        
+        <!-- 游戏控制按钮 -->
+        <div class="flex gap-3 mx-4 mb-4">
+            <button id="startBtn" class="flex-1 bg-fire-accent hover:bg-fire-accent/90 text-white py-3 px-4 rounded-lg transition-all flex items-center justify-center shadow-md">
+                <i class="fa fa-play mr-2"></i>开始游戏
+            </button>
+            <button id="resetBtn" class="flex-1 bg-fire-dark hover:bg-fire-dark/90 text-white py-3 px-4 rounded-lg transition-all flex items-center justify-center shadow-md">
+                <i class="fa fa-refresh mr-2"></i>重置
+            </button>
+        </div>
+        
+        <!-- 游戏网格区域（3列布局，适合手机） -->
+        <div class="flex-1 overflow-y-auto px-3 pb-4">
+            <div id="gameGrid" class="grid grid-cols-3 gap-2.5">
+                <!-- 卡片将通过JS动态生成 -->
+            </div>
+        </div>
+        
+        <!-- 底部信息条 -->
+        <div class="bg-fire-dark/70 text-white/80 text-xs py-2 text-center backdrop-blur-sm">
+            <p>正确+10分 | 错误-5分 | 点击右上角关闭声音</p>
         </div>
     </div>
-
-    <!-- 底部信息条 -->
-    <div class="bg-fire-dark/70 text-white/80 text-xs py-2 text-center backdrop-blur-sm">
-        <p>正确+10分 | 错误-5分 | 点击右上角关闭声音</p>
+    
+    <!-- 游戏说明弹窗 -->
+    <div id="instructions" class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-xl p-5 w-[90%] max-w-sm shadow-2xl z-50">
+        <h3 class="font-bold text-lg text-fire-blue mb-3 flex items-center">
+            <i class="fa fa-info-circle mr-2"></i>游戏说明
+        </h3>
+        <ul class="list-disc pl-5 space-y-1.5 text-gray-700 text-sm">
+            <li>判断场景是否为消防隐患</li>
+            <li>点击移除您认为的隐患</li>
+            <li>正确识别：+10分并移除卡片</li>
+            <li>误判非隐患：-5分并提示</li>
+            <li>移除所有隐患即可获胜</li>
+        </ul>
+        <button id="closeInstructions" class="mt-4 w-full bg-fire-blue hover:bg-fire-blue/90 text-white py-2.5 rounded-lg transition-all">
+            开始游戏
+        </button>
     </div>
-</div>
 
-<!-- 游戏说明弹窗 -->
-<div id="instructions" class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-xl p-5 w-[90%] max-w-sm shadow-2xl z-50">
-    <h3 class="font-bold text-lg text-fire-blue mb-3 flex items-center">
-        <i class="fa fa-info-circle mr-2"></i>游戏说明
-    </h3>
-    <ul class="list-disc pl-5 space-y-1.5 text-gray-700 text-sm">
-        <li>判断场景是否为消防隐患</li>
-        <li>点击移除您认为的隐患</li>
-        <li>正确识别：+10分并移除卡片</li>
-        <li>误判非隐患：-5分并提示</li>
-        <li>移除所有隐患即可获胜</li>
-    </ul>
-    <button id="closeInstructions" class="mt-4 w-full bg-fire-blue hover:bg-fire-blue/90 text-white py-2.5 rounded-lg transition-all">
-        开始游戏
-    </button>
-</div>
+    <script>
+        // 音效控制变量
+        let soundEnabled = true;
+        
+        // 获取音效元素
+        const bgMusic = document.getElementById('bgMusic');
+        const correctSound = document.getElementById('correctSound');
+        const errorSound = document.getElementById('errorSound');
+        const toggleSoundBtn = document.getElementById('toggleSound');
+        
+        // 游戏配置（手机适配：3列5行共15个卡片）
+        const config = {
+            gridSize: { cols: 3, rows: 5 },  // 3列5行网格（适合手机）
+            totalHazards: 8,                 // 隐患总数（减少难度适应手机）
+            hazardScore: 10,                 // 正确移除隐患得分
+            errorPenalty: 5,                 // 错误移除扣分
+            maxTime: 300                     // 最长游戏时间(秒)（缩短适应手机）
+        };
 
-<script>
-    // 音效控制变量
-    let soundEnabled = true;
+        // 游戏状态
+        const gameState = {
+            isPlaying: false,
+            timer: null,
+            timeUsed: 0,
+            score: 0,
+            removedHazards: 0,
+            hazardIndexes: [],    // 隐患所在的索引
+            removedIndexes: []    // 已移除的索引
+        };
 
-    // 获取音效元素
-    const bgMusic = document.getElementById('bgMusic');
-    const correctSound = document.getElementById('correctSound');
-    const errorSound = document.getElementById('errorSound');
-    const toggleSoundBtn = document.getElementById('toggleSound');
+        // DOM元素
+        const gameGrid = document.getElementById('gameGrid');
+        const startBtn = document.getElementById('startBtn');
+        const resetBtn = document.getElementById('resetBtn');
+        const timerDisplay = document.getElementById('timer');
+        const scoreDisplay = document.getElementById('score');
+        const remainingDisplay = document.getElementById('remaining');
+        const instructions = document.getElementById('instructions');
+        const closeInstructions = document.getElementById('closeInstructions');
 
-    // 游戏配置（手机适配：3列5行共15个卡片）
-    const config = {
-        gridSize: { cols: 3, rows: 5 },  // 3列5行网格（适合手机）
-        totalHazards: 8,                 // 隐患总数（减少难度适应手机）
-        hazardScore: 10,                 // 正确移除隐患得分
-        errorPenalty: 5,                 // 错误移除扣分
-        maxTime: 300                     // 最长游戏时间(秒)（缩短适应手机）
-    };
+        // 隐患场景库（精简适合手机显示）
+        const hazardScenes = [
+            { name: '通道堆物', icon: 'fa-boxes', desc: '堵塞消防通道' },
+            { name: '电线乱接', icon: 'fa-bolt', desc: '违规私拉电线' },
+            { name: '易燃物近火', icon: 'fa-fire', desc: '靠近热源' },
+            { name: '灭火器过期', icon: 'fa-calendar-times-o', desc: '器材失效' },
+            { name: '消防栓遮挡', icon: 'fa-tint', desc: '无法使用' },
+            { name: '出口锁闭', icon: 'fa-lock', desc: '安全出口' },
+            { name: '违规用电', icon: 'fa-plug', desc: '大功率电器' },
+            { name: '明火无监护', icon: 'fa-burn', desc: '作业无防护' }
+        ];
 
-    // 游戏状态
-    const gameState = {
-        isPlaying: false,
-        timer: null,
-        timeUsed: 0,
-        score: 0,
-        removedHazards: 0,
-        hazardIndexes: [],    // 隐患所在的索引
-        removedIndexes: []    // 已移除的索引
-    };
+        // 安全场景库（精简适合手机显示）
+        const safeScenes = [
+            { name: '通道畅通', icon: 'fa-road', desc: '无阻挡' },
+            { name: '规范用电', icon: 'fa-plug', desc: '符合标准' },
+            { name: '灭火器有效', icon: 'fa-shield', desc: '定期检查' },
+            { name: '消防栓可用', icon: 'fa-water', desc: '无遮挡' },
+            { name: '出口畅通', icon: 'fa-door-open', desc: '标识清晰' },
+            { name: '电线规范', icon: 'fa-cable-car', desc: '线路整齐' },
+            { name: '应急灯正常', icon: 'fa-lightbulb-o', desc: '可工作' },
+            { name: '禁烟区合规', icon: 'fa-ban', desc: '无明火' }
+        ];
 
-    // DOM元素
-    const gameGrid = document.getElementById('gameGrid');
-    const startBtn = document.getElementById('startBtn');
-    const resetBtn = document.getElementById('resetBtn');
-    const timerDisplay = document.getElementById('timer');
-    const scoreDisplay = document.getElementById('score');
-    const remainingDisplay = document.getElementById('remaining');
-    const instructions = document.getElementById('instructions');
-    const closeInstructions = document.getElementById('closeInstructions');
-
-    // 隐患场景库（精简适合手机显示）
-    const hazardScenes = [
-        { name: '通道堆物', icon: 'fa-boxes', desc: '堵塞消防通道' },
-        { name: '电线乱接', icon: 'fa-bolt', desc: '违规私拉电线' },
-        { name: '易燃物近火', icon: 'fa-fire', desc: '靠近热源' },
-        { name: '灭火器过期', icon: 'fa-calendar-times-o', desc: '器材失效' },
-        { name: '消防栓遮挡', icon: 'fa-tint', desc: '无法使用' },
-        { name: '出口锁闭', icon: 'fa-lock', desc: '安全出口' },
-        { name: '违规用电', icon: 'fa-plug', desc: '大功率电器' },
-        { name: '明火无监护', icon: 'fa-burn', desc: '作业无防护' }
-    ];
-
-    // 安全场景库（精简适合手机显示）
-    const safeScenes = [
-        { name: '通道畅通', icon: 'fa-road', desc: '无阻挡' },
-        { name: '规范用电', icon: 'fa-plug', desc: '符合标准' },
-        { name: '灭火器有效', icon: 'fa-shield', desc: '定期检查' },
-        { name: '消防栓可用', icon: 'fa-water', desc: '无遮挡' },
-        { name: '出口畅通', icon: 'fa-door-open', desc: '标识清晰' },
-        { name: '电线规范', icon: 'fa-cable-car', desc: '线路整齐' },
-        { name: '应急灯正常', icon: 'fa-lightbulb-o', desc: '可工作' },
-        { name: '禁烟区合规', icon: 'fa-ban', desc: '无明火' }
-    ];
-
-    // 播放音效函数
-    function playSound(audioElement) {
-        if (soundEnabled) {
-            audioElement.currentTime = 0;
-            audioElement.play().catch(e => console.log("音效播放失败:", e));
-        }
-    }
-
-    // 切换声音开关
-    function toggleSound() {
-        soundEnabled = !soundEnabled;
-        if (soundEnabled) {
-            toggleSoundBtn.innerHTML = '<i class="fa fa-volume-up"></i>';
-            if (gameState.isPlaying) {
-                bgMusic.play().catch(e => console.log("背景音乐播放失败:", e));
-            }
-        } else {
-            toggleSoundBtn.innerHTML = '<i class="fa fa-volume-off"></i>';
-            bgMusic.pause();
-        }
-    }
-
-    // 初始化游戏网格（手机适配）
-    function initGrid() {
-        gameGrid.innerHTML = '';
-        gameState.hazardIndexes = [];
-        const totalCells = config.gridSize.cols * config.gridSize.rows;
-
-        // 随机生成隐患位置（不重复）
-        while (gameState.hazardIndexes.length < config.totalHazards) {
-            const index = Math.floor(Math.random() * totalCells);
-            if (!gameState.hazardIndexes.includes(index)) {
-                gameState.hazardIndexes.push(index);
+        // 播放音效函数
+        function playSound(audioElement) {
+            if (soundEnabled) {
+                audioElement.currentTime = 0;
+                audioElement.play().catch(e => console.log("音效播放失败:", e));
             }
         }
 
-        // 生成所有卡片（手机触控友好尺寸）
-        for (let i = 0; i < totalCells; i++) {
-            const isHazard = gameState.hazardIndexes.includes(i);
+        // 切换声音开关
+        function toggleSound() {
+            soundEnabled = !soundEnabled;
+            if (soundEnabled) {
+                toggleSoundBtn.innerHTML = '<i class="fa fa-volume-up"></i>';
+                if (gameState.isPlaying) {
+                    bgMusic.play().catch(e => console.log("背景音乐播放失败:", e));
+                }
+            } else {
+                toggleSoundBtn.innerHTML = '<i class="fa fa-volume-off"></i>';
+                bgMusic.pause();
+            }
+        }
 
-            // 选择场景数据
-            const sceneData = isHazard
-                ? hazardScenes[Math.floor(Math.random() * hazardScenes.length)]
-                : safeScenes[Math.floor(Math.random() * safeScenes.length)];
+        // 初始化游戏网格（手机适配）
+        function initGrid() {
+            gameGrid.innerHTML = '';
+            gameState.hazardIndexes = [];
+            const totalCells = config.gridSize.cols * config.gridSize.rows;
+            
+            // 随机生成隐患位置（不重复）
+            while (gameState.hazardIndexes.length < config.totalHazards) {
+                const index = Math.floor(Math.random() * totalCells);
+                if (!gameState.hazardIndexes.includes(index)) {
+                    gameState.hazardIndexes.push(index);
+                }
+            }
 
-            // 创建卡片（适合手指点击的尺寸）
-            const card = document.createElement('div');
-            card.className = `bg-fire-card rounded-lg p-3 shadow-md card-hover card-glow flex flex-col items-center justify-center h-28 cursor-pointer border border-fire-light/20`;
-            card.dataset.index = i;
-            card.dataset.isHazard = isHazard;
+            // 生成所有卡片（手机触控友好尺寸）
+            for (let i = 0; i < totalCells; i++) {
+                const isHazard = gameState.hazardIndexes.includes(i);
+                
+                // 选择场景数据
+                const sceneData = isHazard 
+                    ? hazardScenes[Math.floor(Math.random() * hazardScenes.length)]
+                    : safeScenes[Math.floor(Math.random() * safeScenes.length)];
 
-            // 卡片内容（手机适配的文字大小）
-            card.innerHTML = `
+                // 创建卡片（适合手指点击的尺寸）
+                const card = document.createElement('div');
+                card.className = `bg-fire-card rounded-lg p-3 shadow-md card-hover card-glow flex flex-col items-center justify-center h-28 cursor-pointer border border-fire-light/20`;
+                card.dataset.index = i;
+                card.dataset.isHazard = isHazard;
+                
+                // 卡片内容（手机适配的文字大小）
+                card.innerHTML = `
                     <i class="fa ${sceneData.icon} text-3xl text-fire-blue mb-1.5"></i>
                     <h3 class="text-center font-medium text-sm mb-0.5">${sceneData.name}</h3>
                     <p class="text-center text-xs text-gray-600">${sceneData.desc}</p>
                 `;
 
-            // 绑定点击事件（适合触摸操作）
-            card.addEventListener('click', () => handleCardRemoval(card));
-
-            gameGrid.appendChild(card);
-        }
-
-        updateRemaining();
-    }
-
-    // 处理卡片移除（手机触控反馈）
-    function handleCardRemoval(card) {
-        const index = parseInt(card.dataset.index);
-        const isHazard = card.dataset.isHazard === 'true';
-
-        // 游戏未开始或已移除的卡片不响应
-        if (!gameState.isPlaying || gameState.removedIndexes.includes(index)) {
-            return;
-        }
-
-        // 判断是否为隐患
-        if (isHazard) {
-            // 正确：播放成功音效
-            playSound(correctSound);
-
-            // 执行移除动画
-            card.classList.add('remove-animation');
-            gameState.removedIndexes.push(index);
-            gameState.removedHazards++;
-            gameState.score += config.hazardScore;
-
-            // 检查是否所有隐患都被移除
-            if (gameState.removedHazards === config.totalHazards) {
-                endGame(true);
+                // 绑定点击事件（适合触摸操作）
+                card.addEventListener('click', () => handleCardRemoval(card));
+                
+                gameGrid.appendChild(card);
             }
-        } else {
-            // 错误：播放错误音效
-            playSound(errorSound);
 
-            // 执行错误提示动画
-            card.classList.add('error-shake');
-            gameState.score = Math.max(0, gameState.score - config.errorPenalty);
-
-            // 移除错误动画类
-            setTimeout(() => {
-                card.classList.remove('error-shake');
-            }, 500);
+            updateRemaining();
         }
 
-        // 更新显示
-        updateScore();
-        updateRemaining();
-    }
+        // 处理卡片移除（手机触控反馈）
+        function handleCardRemoval(card) {
+            const index = parseInt(card.dataset.index);
+            const isHazard = card.dataset.isHazard === 'true';
 
-    // 开始游戏
-    function startGame() {
-        // 隐藏说明弹窗
-        instructions.classList.add('hidden');
-
-        // 重置游戏状态
-        gameState.isPlaying = true;
-        gameState.score = 0;
-        gameState.removedHazards = 0;
-        gameState.removedIndexes = [];
-        gameState.timeUsed = 0;
-
-        // 播放背景音乐
-        if (soundEnabled) {
-            bgMusic.play().catch(e => console.log("背景音乐播放失败:", e));
-        }
-
-        // 初始化网格
-        initGrid();
-
-        // 启动计时器
-        if (gameState.timer) clearInterval(gameState.timer);
-        gameState.timer = setInterval(() => {
-            gameState.timeUsed++;
-            updateTimer();
-
-            // 超时结束
-            if (gameState.timeUsed >= config.maxTime) {
-                endGame(false);
+            // 游戏未开始或已移除的卡片不响应
+            if (!gameState.isPlaying || gameState.removedIndexes.includes(index)) {
+                return;
             }
-        }, 1000);
 
-        // 更新显示
-        updateScore();
-        startBtn.disabled = true;
-        startBtn.classList.add('opacity-50', 'cursor-not-allowed');
-    }
+            // 判断是否为隐患
+            if (isHazard) {
+                // 正确：播放成功音效
+                playSound(correctSound);
+                
+                // 执行移除动画
+                card.classList.add('remove-animation');
+                gameState.removedIndexes.push(index);
+                gameState.removedHazards++;
+                gameState.score += config.hazardScore;
 
-    // 结束游戏
-    function endGame(isWin) {
-        clearInterval(gameState.timer);
-        gameState.isPlaying = false;
-        startBtn.disabled = false;
-        startBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                // 检查是否所有隐患都被移除
+                if (gameState.removedHazards === config.totalHazards) {
+                    endGame(true);
+                }
+            } else {
+                // 错误：播放错误音效
+                playSound(errorSound);
+                
+                // 执行错误提示动画
+                card.classList.add('error-shake');
+                gameState.score = Math.max(0, gameState.score - config.errorPenalty);
+                
+                // 移除错误动画类
+                setTimeout(() => {
+                    card.classList.remove('error-shake');
+                }, 500);
+            }
 
-        // 暂停背景音乐
-        bgMusic.pause();
-
-        // 显示结果（手机适配的弹窗文字）
-        if (isWin) {
-            // 胜利：计算时间奖励
-            const timeBonus = Math.max(0, Math.floor((config.maxTime - gameState.timeUsed) / 10));
-            gameState.score += timeBonus;
+            // 更新显示
             updateScore();
-            alert(`🎉 恭喜获胜！\n得分：${gameState.score}分（含奖励${timeBonus}分）\n用时：${formatTime(gameState.timeUsed)}`);
-        } else {
-            alert(`⏰ 时间到！\n已移除${gameState.removedHazards}/${config.totalHazards}个隐患\n得分：${gameState.score}分`);
+            updateRemaining();
         }
-    }
 
-    // 格式化时间显示
-    function formatTime(seconds) {
-        const mins = Math.floor(seconds / 60);
-        const secs = seconds % 60;
-        return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
-    }
+        // 开始游戏
+        function startGame() {
+            // 隐藏说明弹窗
+            instructions.classList.add('hidden');
+            
+            // 重置游戏状态
+            gameState.isPlaying = true;
+            gameState.score = 0;
+            gameState.removedHazards = 0;
+            gameState.removedIndexes = [];
+            gameState.timeUsed = 0;
 
-    // 更新计时器显示
-    function updateTimer() {
-        timerDisplay.textContent = formatTime(gameState.timeUsed);
-    }
+            // 播放背景音乐
+            if (soundEnabled) {
+                bgMusic.play().catch(e => console.log("背景音乐播放失败:", e));
+            }
 
-    // 更新分数显示
-    function updateScore() {
-        scoreDisplay.textContent = gameState.score;
-    }
+            // 初始化网格
+            initGrid();
 
-    // 更新剩余隐患显示
-    function updateRemaining() {
-        remainingDisplay.textContent = config.totalHazards - gameState.removedHazards;
-    }
+            // 启动计时器
+            if (gameState.timer) clearInterval(gameState.timer);
+            gameState.timer = setInterval(() => {
+                gameState.timeUsed++;
+                updateTimer();
+                
+                // 超时结束
+                if (gameState.timeUsed >= config.maxTime) {
+                    endGame(false);
+                }
+            }, 1000);
 
-    // 绑定事件（适合触摸操作）
-    startBtn.addEventListener('click', startGame);
-    resetBtn.addEventListener('click', startGame);
-    closeInstructions.addEventListener('click', startGame);
-    toggleSoundBtn.addEventListener('click', toggleSound);
+            // 更新显示
+            updateScore();
+            startBtn.disabled = true;
+            startBtn.classList.add('opacity-50', 'cursor-not-allowed');
+        }
 
-    // 初始化
-    window.addEventListener('load', () => {
-        initGrid();
-        // 显示游戏说明
-        setTimeout(() => {
-            instructions.classList.remove('hidden');
-        }, 500);
-    });
-</script>
+        // 结束游戏
+        function endGame(isWin) {
+            clearInterval(gameState.timer);
+            gameState.isPlaying = false;
+            startBtn.disabled = false;
+            startBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+            
+            // 暂停背景音乐
+            bgMusic.pause();
+
+            // 显示结果（手机适配的弹窗文字）
+            if (isWin) {
+                // 胜利：计算时间奖励
+                const timeBonus = Math.max(0, Math.floor((config.maxTime - gameState.timeUsed) / 10));
+                gameState.score += timeBonus;
+                updateScore();
+                alert(`🎉 恭喜获胜！\n得分：${gameState.score}分（含奖励${timeBonus}分）\n用时：${formatTime(gameState.timeUsed)}`);
+            } else {
+                alert(`⏰ 时间到！\n已移除${gameState.removedHazards}/${config.totalHazards}个隐患\n得分：${gameState.score}分`);
+            }
+        }
+
+        // 格式化时间显示
+        function formatTime(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = seconds % 60;
+            return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+        }
+
+        // 更新计时器显示
+        function updateTimer() {
+            timerDisplay.textContent = formatTime(gameState.timeUsed);
+        }
+
+        // 更新分数显示
+        function updateScore() {
+            scoreDisplay.textContent = gameState.score;
+        }
+
+        // 更新剩余隐患显示
+        function updateRemaining() {
+            remainingDisplay.textContent = config.totalHazards - gameState.removedHazards;
+        }
+
+        // 绑定事件（适合触摸操作）
+        startBtn.addEventListener('click', startGame);
+        resetBtn.addEventListener('click', startGame);
+        closeInstructions.addEventListener('click', startGame);
+        toggleSoundBtn.addEventListener('click', toggleSound);
+
+        // 初始化
+        window.addEventListener('load', () => {
+            initGrid();
+            // 显示游戏说明
+            setTimeout(() => {
+                instructions.classList.remove('hidden');
+            }, 500);
+        });
+    </script>
 </body>
 </html>
