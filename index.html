@@ -1,13 +1,12 @@
-
 <!DOCTYPE html>
-<!-- saved from url=(0102)file:///home/admin/Desktop/%E5%BE%85%E9%98%85%E6%96%87%E4%BB%B6/%E6%9C%AA%E5%91%BD%E5%90%8D%20(1).html -->
-<html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>消防隐患消消乐</title>
     <script src="./yhxxl/saved_resource"></script>
     <link href="./yhxxl/font-awesome.min.css" rel="stylesheet">
-    
+
     <script>
         tailwind.config = {
             theme: {
@@ -28,25 +27,24 @@
             }
         }
     </script>
-    
+
     <style type="text/tailwindcss">
         @layer utilities {
             .content-auto {
                 content-visibility: auto;
             }
             .card-hover {
-                transition: all 0.3s ease;
+                transition: all 0.2s ease;
             }
-            .card-hover:hover {
-                transform: translateY(-4px);
-                box-shadow: 0 12px 20px -8px rgba(0, 0, 0, 0.15);
+            .card-hover:active {
+                transform: scale(0.95);
             }
             .remove-animation {
-                animation: remove 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+                animation: remove 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
             }
             @keyframes remove {
                 0% { opacity: 1; transform: scale(1); }
-                50% { opacity: 0.7; transform: scale(1.08); }
+                50% { opacity: 0.7; transform: scale(1.05); }
                 100% { opacity: 0; transform: scale(0); }
             }
             .error-shake {
@@ -55,533 +53,391 @@
             @keyframes shake {
                 10%, 90% { transform: translateX(-1px); }
                 20%, 80% { transform: translateX(2px); }
-                30%, 50%, 70% { transform: translateX(-3px); }
-                40%, 60% { transform: translateX(3px); }
+                30%, 50%, 70% { transform: translateX(-2px); }
+                40%, 60% { transform: translateX(2px); }
             }
             .gradient-bg {
-                background: linear-gradient(135deg, #1E5A8A 0%, #3598DB 100%);
+                background: linear-gradient(180deg, #1E5A8A 0%, #3598DB 100%);
             }
             .text-shadow {
-                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
             }
             .card-glow {
-                box-shadow: 0 0 15px rgba(53, 152, 219, 0.2);
+                box-shadow: 0 0 10px rgba(53, 152, 219, 0.3);
             }
             .sound-control {
                 position: absolute;
-                top: 10px;
-                right: 10px;
+                top: 12px;
+                right: 12px;
                 z-index: 20;
-                cursor: pointer;
             }
         }
     </style>
-<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:Inter, system-ui, sans-serif;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.bottom-2{bottom:0.5rem}.bottom-4{bottom:1rem}.left-0{left:0px}.left-1\/2{left:50%}.left-4{left:1rem}.right-0{right:0px}.right-4{right:1rem}.top-0{top:0px}.top-1\/2{top:50%}.top-4{top:1rem}.top-\[120px\]{top:120px}.top-\[200px\]{top:200px}.z-10{z-index:10}.z-50{z-index:50}.mb-4{margin-bottom:1rem}.mr-2{margin-right:0.5rem}.mr-3{margin-right:0.75rem}.mt-1{margin-top:0.25rem}.mt-5{margin-top:1.25rem}.mb-0\.5{margin-bottom:0.125rem}.mb-1{margin-bottom:0.25rem}.flex{display:flex}.grid{display:grid}.hidden{display:none}.aspect-\[16\/9\]{aspect-ratio:16/9}.h-10{height:2.5rem}.h-2{height:0.5rem}.h-24{height:6rem}.min-h-screen{min-height:100vh}.w-10{width:2.5rem}.w-11\/12{width:91.666667%}.w-full{width:100%}.max-w-6xl{max-width:72rem}.max-w-md{max-width:28rem}.-translate-x-1\/2{--tw-translate-x:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.-translate-y-1\/2{--tw-translate-y:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.transform{transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@keyframes pulse{50%{opacity:.5}}.animate-pulse{animation:pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite}.cursor-pointer{cursor:pointer}.list-disc{list-style-type:disc}.grid-cols-6{grid-template-columns:repeat(6, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-6{gap:1.5rem}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.overflow-y-auto{overflow-y:auto}.rounded-2xl{border-radius:1rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-fire-light\/20{border-color:rgb(53 152 219 / 0.2)}.bg-fire-accent{--tw-bg-opacity:1;background-color:rgb(255 87 34 / var(--tw-bg-opacity, 1))}.bg-fire-blue{--tw-bg-opacity:1;background-color:rgb(30 90 138 / var(--tw-bg-opacity, 1))}.bg-fire-dark{--tw-bg-opacity:1;background-color:rgb(15 48 87 / var(--tw-bg-opacity, 1))}.bg-red-500{--tw-bg-opacity:1;background-color:rgb(239 68 68 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-white\/20{background-color:rgb(255 255 255 / 0.2)}.bg-white\/90{background-color:rgb(255 255 255 / 0.9)}.bg-fire-card{--tw-bg-opacity:1;background-color:rgb(240 247 255 / var(--tw-bg-opacity, 1))}.p-2{padding:0.5rem}.p-3{padding:0.75rem}.p-6{padding:1.5rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.pl-5{padding-left:1.25rem}.text-center{text-align:center}.text-\[clamp\(1\.5rem\2c 3vw\2c 2\.2rem\)\]{font-size:clamp(1.5rem,3vw,2.2rem)}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.text-2xl{font-size:1.5rem;line-height:2rem}.text-\[10px\]{font-size:10px}.font-bold{font-weight:700}.font-medium{font-weight:500}.text-blue-100{--tw-text-opacity:1;color:rgb(219 234 254 / var(--tw-text-opacity, 1))}.text-fire-accent{--tw-text-opacity:1;color:rgb(255 87 34 / var(--tw-text-opacity, 1))}.text-fire-blue{--tw-text-opacity:1;color:rgb(30 90 138 / var(--tw-text-opacity, 1))}.text-fire-dark{--tw-text-opacity:1;color:rgb(15 48 87 / var(--tw-text-opacity, 1))}.text-gray-700{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity, 1))}.text-red-500{--tw-text-opacity:1;color:rgb(239 68 68 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-white\/70{color:rgb(255 255 255 / 0.7)}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.card-hover {
-                transition: all 0.3s ease;
-            }.card-hover:hover {
-                transform: translateY(-4px);
-                box-shadow: 0 12px 20px -8px rgba(0, 0, 0, 0.15);
-            }@keyframes remove {
-                0% { opacity: 1; transform: scale(1); }
-                50% { opacity: 0.7; transform: scale(1.08); }
-                100% { opacity: 0; transform: scale(0); }
-            }@keyframes shake {
-                10%, 90% { transform: translateX(-1px); }
-                20%, 80% { transform: translateX(2px); }
-                30%, 50%, 70% { transform: translateX(-3px); }
-                40%, 60% { transform: translateX(3px); }
-            }.gradient-bg {
-                background: linear-gradient(135deg, #1E5A8A 0%, #3598DB 100%);
-            }.text-shadow {
-                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            }.card-glow {
-                box-shadow: 0 0 15px rgba(53, 152, 219, 0.2);
-            }.sound-control {
-                position: absolute;
-                top: 10px;
-                right: 10px;
-                z-index: 20;
-                cursor: pointer;
-            }
-        .hover\:bg-fire-accent\/90:hover{background-color:rgb(255 87 34 / 0.9)}
-        .hover\:bg-fire-blue\/90:hover{background-color:rgb(30 90 138 / 0.9)}
-        .hover\:bg-fire-dark\/90:hover{background-color:rgb(15 48 87 / 0.9)}
-        .hover\:bg-white\/30:hover{background-color:rgb(255 255 255 / 0.3)}
-        .hover\:shadow-lg:hover{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}
-        @media (min-width: 768px){.md\:h-28{height:7rem}.md\:gap-10{gap:2.5rem}.md\:gap-3{gap:0.75rem}.md\:p-6{padding:1.5rem}.md\:text-base{font-size:1rem;line-height:1.5rem}.md\:text-sm{font-size:0.875rem;line-height:1.25rem}.md\:text-3xl{font-size:1.875rem;line-height:2.25rem}.md\:text-xs{font-size:0.75rem;line-height:1rem}}
-    </style></head>
-<body class="bg-fire-dark min-h-screen p-2 md:p-6 flex flex-col items-center justify-center">
-    <!-- 音效元素 -->
-    <audio id="bgMusic" loop="" preload="auto" volume="0.3">
-        <source src="./mixkit-tech-house-vibes-130.mp3" type="audio/mpeg">
-    </audio>
-    <audio id="correctSound" preload="auto">
-        <source src="./mixkit-achievement-bell-600.mp3" type="audio/mpeg">
-    </audio>
-    <audio id="errorSound" preload="auto">
-        <source src="./5c89396f017e881994.mp3" type="audio/mpeg">
-    </audio>
-    
-    <!-- 16:9主容器 -->
-    <div class="relative w-full max-w-6xl aspect-[16/9] rounded-2xl overflow-hidden gradient-bg shadow-2xl">
-        <!-- 声音控制按钮 -->
-        <div class="sound-control">
-            <button id="toggleSound" class="bg-white/20 hover:bg-white/30 text-white w-10 h-10 rounded-full flex items-center justify-center backdrop-blur-sm transition-all">
-                <i class="fa fa-volume-up"></i>
-            </button>
-        </div>
-        
-        <!-- 顶部装饰条 -->
-        <div class="absolute top-0 left-0 right-0 h-2 bg-fire-accent"></div>
-        
-        <!-- 游戏标题区 -->
-        <div class="absolute top-4 left-0 right-0 text-center z-10">
-            <h1 class="text-[clamp(1.5rem,3vw,2.2rem)] font-bold text-white flex items-center justify-center text-shadow">
-                <i class="fa fa-fire-extinguisher mr-3 animate-pulse"></i>消防隐患消消乐
-            </h1>
-            <p class="text-blue-100 mt-1 text-sm md:text-base">识别隐患，守护安全！</p>
-        </div>
-        
-        <!-- 游戏状态面板 -->
-        <div class="absolute top-[120px] left-4 right-4 bg-white/90 backdrop-blur-sm rounded-xl p-3 shadow-lg z-10">
-            <div class="flex flex-wrap justify-between items-center gap-3">
-                <div class="flex gap-6 md:gap-10">
-                    <div class="flex items-center">
-                        <div class="w-10 h-10 rounded-full bg-fire-blue flex items-center justify-center text-white mr-2">
-                            <i class="fa fa-clock-o"></i>
-                        </div>
-                        <span class="text-fire-dark">用时: <span id="timer" class="font-bold text-fire-blue">00:00</span></span>
-                    </div>
-                    <div class="flex items-center">
-                        <div class="w-10 h-10 rounded-full bg-fire-accent flex items-center justify-center text-white mr-2">
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <span class="text-fire-dark">分数: <span id="score" class="font-bold text-fire-accent">0</span></span>
-                    </div>
-                    <div class="flex items-center">
-                        <div class="w-10 h-10 rounded-full bg-red-500 flex items-center justify-center text-white mr-2">
-                            <i class="fa fa-exclamation-circle"></i>
-                        </div>
-                        <span class="text-fire-dark">剩余隐患: <span id="remaining" class="font-bold text-red-500">10</span></span>
-                    </div>
-                </div>
-                <div class="flex gap-3">
-                    <button id="startBtn" class="bg-fire-accent hover:bg-fire-accent/90 text-white py-2 px-6 rounded-lg transition-all flex items-center shadow-md hover:shadow-lg">
-                        <i class="fa fa-play mr-2"></i>开始游戏
-                    </button>
-                    <button id="resetBtn" class="bg-fire-dark hover:bg-fire-dark/90 text-white py-2 px-6 rounded-lg transition-all flex items-center shadow-md hover:shadow-lg">
-                        <i class="fa fa-refresh mr-2"></i>重置
-                    </button>
-                </div>
-            </div>
-        </div>
-        
-        <!-- 6x4游戏网格区域 -->
-        <div class="absolute top-[200px] left-4 right-4 bottom-4 overflow-y-auto p-2">
-            <div id="gameGrid" class="grid grid-cols-6 gap-2 md:gap-3"><div class="bg-fire-card rounded-lg p-2 shadow-md card-hover card-glow flex flex-col items-center justify-center h-24 md:h-28 cursor-pointer border border-fire-light/20" data-index="0" data-is-hazard="true">
-                    <i class="fa fa-fire text-2xl md:text-3xl text-fire-blue mb-1"></i>
-                    <h3 class="text-center font-medium text-xs md:text-sm mb-0.5">易燃物靠近火源</h3>
-                    <p class="text-center text-[10px] md:text-xs text-gray-600">纸张靠近加热器</p>
-                </div><div class="bg-fire-card rounded-lg p-2 shadow-md card-hover card-glow flex flex-col items-center justify-center h-24 md:h-28 cursor-pointer border border-fire-light/20" data-index="1" data-is-hazard="true">
-                    <i class="fa fa-boxes text-2xl md:text-3xl text-fire-blue mb-1"></i>
-                    <h3 class="text-center font-medium text-xs md:text-sm mb-0.5">消防通道堆物</h3>
-                    <p class="text-center text-[10px] md:text-xs text-gray-600">通道被杂物堵塞</p>
-                </div><div class="bg-fire-card rounded-lg p-2 shadow-md card-hover card-glow flex flex-col items-center justify-center h-24 md:h-28 cursor-pointer border border-fire-light/20" data-index="2" data-is-hazard="false">
-                    <i class="fa fa-archive text-2xl md:text-3xl text-fire-blue mb-1"></i>
-                    <h3 class="text-center font-medium text-xs md:text-sm mb-0.5">易燃品妥善存放</h3>
-                    <p class="text-center text-[10px] md:text-xs text-gray-600">危险品专柜存放</p>
-                </div><div class="bg-fire-card rounded-lg p-2 shadow-md card-hover card-glow flex flex-col items-center justify-center h-24 md:h-28 cursor-pointer border border-fire-light/20" data-index="3" data-is-hazard="true">
-                    <i class="fa fa-sign-out text-2xl md:text-3xl text-fire-blue mb-1"></i>
-                    <h3 class="text-center font-medium text-xs md:text-sm mb-0.5">堵塞安全出口</h3>
-                    <p class="text-center text-[10px] md:text-xs text-gray-600">出口被货物阻挡</p>
-                </div><div class="bg-fire-card rounded-lg p-2 shadow-md card-hover card-glow flex flex-col items-center justify-center h-24 md:h-28 cursor-pointer border border-fire-light/20" data-index="4" data-is-hazard="false">
-                    <i class="fa fa-bell text-2xl md:text-3xl text-fire-blue mb-1"></i>
-                    <h3 class="text-center font-medium text-xs md:text-sm mb-0.5">消防报警正常</h3>
-                    <p class="text-center text-[10px] md:text-xs text-gray-600">报警系统灵敏有效</p>
-                </div><div class="bg-fire-card rounded-lg p-2 shadow-md card-hover card-glow flex flex-col items-center justify-center h-24 md:h-28 cursor-pointer border border-fire-light/20" data-index="5" data-is-hazard="true">
-                    <i class="fa fa-boxes text-2xl md:text-3xl text-fire-blue mb-1"></i>
-                    <h3 class="text-center font-medium text-xs md:text-sm mb-0.5">消防通道堆物</h3>
-                    <p class="text-center text-[10px] md:text-xs text-gray-600">通道被杂物堵塞</p>
-                </div><div class="bg-fire-card rounded-lg p-2 shadow-md card-hover card-glow flex flex-col items-center justify-center h-24 md:h-28 cursor-pointer border border-fire-light/20" data-index="6" data-is-hazard="false">
-                    <i class="fa fa-lightbulb-o text-2xl md:text-3xl text-fire-blue mb-1"></i>
-                    <h3 class="text-center font-medium text-xs md:text-sm mb-0.5">应急照明正常</h3>
-                    <p class="text-center text-[10px] md:text-xs text-gray-600">应急灯可正常工作</p>
-                </div><div class="bg-fire-card rounded-lg p-2 shadow-md card-hover card-glow flex flex-col items-center justify-center h-24 md:h-28 cursor-pointer border border-fire-light/20" data-index="7" data-is-hazard="true">
-                    <i class="fa fa-plug text-2xl md:text-3xl text-fire-blue mb-1"></i>
-                    <h3 class="text-center font-medium text-xs md:text-sm mb-0.5">大功率电器违规使用</h3>
-                    <p class="text-center text-[10px] md:text-xs text-gray-600">超负荷使用电器</p>
-                </div><div class="bg-fire-card rounded-lg p-2 shadow-md card-hover card-glow flex flex-col items-center justify-center h-24 md:h-28 cursor-pointer border border-fire-light/20" data-index="8" data-is-hazard="false">
-                    <i class="fa fa-shower text-2xl md:text-3xl text-fire-blue mb-1"></i>
-                    <h3 class="text-center font-medium text-xs md:text-sm mb-0.5">喷淋系统完好</h3>
-                    <p class="text-center text-[10px] md:text-xs text-gray-600">自动灭火装置正常</p>
-                </div><div class="bg-fire-card rounded-lg p-2 shadow-md card-hover card-glow flex flex-col items-center justify-center h-24 md:h-28 cursor-pointer border border-fire-light/20" data-index="9" data-is-hazard="true">
-                    <i class="fa fa-plug text-2xl md:text-3xl text-fire-blue mb-1"></i>
-                    <h3 class="text-center font-medium text-xs md:text-sm mb-0.5">大功率电器违规使用</h3>
-                    <p class="text-center text-[10px] md:text-xs text-gray-600">超负荷使用电器</p>
-                </div><div class="bg-fire-card rounded-lg p-2 shadow-md card-hover card-glow flex flex-col items-center justify-center h-24 md:h-28 cursor-pointer border border-fire-light/20" data-index="10" data-is-hazard="false">
-                    <i class="fa fa-shield text-2xl md:text-3xl text-fire-blue mb-1"></i>
-                    <h3 class="text-center font-medium text-xs md:text-sm mb-0.5">灭火器定期检查</h3>
-                    <p class="text-center text-[10px] md:text-xs text-gray-600">器材在有效期内</p>
-                </div><div class="bg-fire-card rounded-lg p-2 shadow-md card-hover card-glow flex flex-col items-center justify-center h-24 md:h-28 cursor-pointer border border-fire-light/20" data-index="11" data-is-hazard="false">
-                    <i class="fa fa-road text-2xl md:text-3xl text-fire-blue mb-1"></i>
-                    <h3 class="text-center font-medium text-xs md:text-sm mb-0.5">畅通消防通道</h3>
-                    <p class="text-center text-[10px] md:text-xs text-gray-600">通道无任何阻挡</p>
-                </div><div class="bg-fire-card rounded-lg p-2 shadow-md card-hover card-glow flex flex-col items-center justify-center h-24 md:h-28 cursor-pointer border border-fire-light/20" data-index="12" data-is-hazard="false">
-                    <i class="fa fa-id-card text-2xl md:text-3xl text-fire-blue mb-1"></i>
-                    <h3 class="text-center font-medium text-xs md:text-sm mb-0.5">员工持证上岗</h3>
-                    <p class="text-center text-[10px] md:text-xs text-gray-600">具备消防资质</p>
-                </div><div class="bg-fire-card rounded-lg p-2 shadow-md card-hover card-glow flex flex-col items-center justify-center h-24 md:h-28 cursor-pointer border border-fire-light/20" data-index="13" data-is-hazard="false">
-                    <i class="fa fa-shield text-2xl md:text-3xl text-fire-blue mb-1"></i>
-                    <h3 class="text-center font-medium text-xs md:text-sm mb-0.5">灭火器定期检查</h3>
-                    <p class="text-center text-[10px] md:text-xs text-gray-600">器材在有效期内</p>
-                </div><div class="bg-fire-card rounded-lg p-2 shadow-md card-hover card-glow flex flex-col items-center justify-center h-24 md:h-28 cursor-pointer border border-fire-light/20" data-index="14" data-is-hazard="true">
-                    <i class="fa fa-warehouse text-2xl md:text-3xl text-fire-blue mb-1"></i>
-                    <h3 class="text-center font-medium text-xs md:text-sm mb-0.5">仓库堆物超高</h3>
-                    <p class="text-center text-[10px] md:text-xs text-gray-600">货物遮挡喷淋</p>
-                </div><div class="bg-fire-card rounded-lg p-2 shadow-md card-hover card-glow flex flex-col items-center justify-center h-24 md:h-28 cursor-pointer border border-fire-light/20" data-index="15" data-is-hazard="false">
-                    <i class="fa fa-shield text-2xl md:text-3xl text-fire-blue mb-1"></i>
-                    <h3 class="text-center font-medium text-xs md:text-sm mb-0.5">灭火器定期检查</h3>
-                    <p class="text-center text-[10px] md:text-xs text-gray-600">器材在有效期内</p>
-                </div><div class="bg-fire-card rounded-lg p-2 shadow-md card-hover card-glow flex flex-col items-center justify-center h-24 md:h-28 cursor-pointer border border-fire-light/20" data-index="16" data-is-hazard="true">
-                    <i class="fa fa-lock text-2xl md:text-3xl text-fire-blue mb-1"></i>
-                    <h3 class="text-center font-medium text-xs md:text-sm mb-0.5">安全出口锁闭</h3>
-                    <p class="text-center text-[10px] md:text-xs text-gray-600">紧急出口无法打开</p>
-                </div><div class="bg-fire-card rounded-lg p-2 shadow-md card-hover card-glow flex flex-col items-center justify-center h-24 md:h-28 cursor-pointer border border-fire-light/20" data-index="17" data-is-hazard="false">
-                    <i class="fa fa-shower text-2xl md:text-3xl text-fire-blue mb-1"></i>
-                    <h3 class="text-center font-medium text-xs md:text-sm mb-0.5">喷淋系统完好</h3>
-                    <p class="text-center text-[10px] md:text-xs text-gray-600">自动灭火装置正常</p>
-                </div><div class="bg-fire-card rounded-lg p-2 shadow-md card-hover card-glow flex flex-col items-center justify-center h-24 md:h-28 cursor-pointer border border-fire-light/20" data-index="18" data-is-hazard="false">
-                    <i class="fa fa-bell text-2xl md:text-3xl text-fire-blue mb-1"></i>
-                    <h3 class="text-center font-medium text-xs md:text-sm mb-0.5">消防报警正常</h3>
-                    <p class="text-center text-[10px] md:text-xs text-gray-600">报警系统灵敏有效</p>
-                </div><div class="bg-fire-card rounded-lg p-2 shadow-md card-hover card-glow flex flex-col items-center justify-center h-24 md:h-28 cursor-pointer border border-fire-light/20" data-index="19" data-is-hazard="false">
-                    <i class="fa fa-plug text-2xl md:text-3xl text-fire-blue mb-1"></i>
-                    <h3 class="text-center font-medium text-xs md:text-sm mb-0.5">规范电器使用</h3>
-                    <p class="text-center text-[10px] md:text-xs text-gray-600">电器符合安全标准</p>
-                </div><div class="bg-fire-card rounded-lg p-2 shadow-md card-hover card-glow flex flex-col items-center justify-center h-24 md:h-28 cursor-pointer border border-fire-light/20" data-index="20" data-is-hazard="false">
-                    <i class="fa fa-shower text-2xl md:text-3xl text-fire-blue mb-1"></i>
-                    <h3 class="text-center font-medium text-xs md:text-sm mb-0.5">喷淋系统完好</h3>
-                    <p class="text-center text-[10px] md:text-xs text-gray-600">自动灭火装置正常</p>
-                </div><div class="bg-fire-card rounded-lg p-2 shadow-md card-hover card-glow flex flex-col items-center justify-center h-24 md:h-28 cursor-pointer border border-fire-light/20" data-index="21" data-is-hazard="true">
-                    <i class="fa fa-lock text-2xl md:text-3xl text-fire-blue mb-1"></i>
-                    <h3 class="text-center font-medium text-xs md:text-sm mb-0.5">安全出口锁闭</h3>
-                    <p class="text-center text-[10px] md:text-xs text-gray-600">紧急出口无法打开</p>
-                </div><div class="bg-fire-card rounded-lg p-2 shadow-md card-hover card-glow flex flex-col items-center justify-center h-24 md:h-28 cursor-pointer border border-fire-light/20" data-index="22" data-is-hazard="false">
-                    <i class="fa fa-cable-car text-2xl md:text-3xl text-fire-blue mb-1"></i>
-                    <h3 class="text-center font-medium text-xs md:text-sm mb-0.5">电线规范布置</h3>
-                    <p class="text-center text-[10px] md:text-xs text-gray-600">线路整齐无裸露</p>
-                </div><div class="bg-fire-card rounded-lg p-2 shadow-md card-hover card-glow flex flex-col items-center justify-center h-24 md:h-28 cursor-pointer border border-fire-light/20" data-index="23" data-is-hazard="true">
-                    <i class="fa fa-lock text-2xl md:text-3xl text-fire-blue mb-1"></i>
-                    <h3 class="text-center font-medium text-xs md:text-sm mb-0.5">安全出口锁闭</h3>
-                    <p class="text-center text-[10px] md:text-xs text-gray-600">紧急出口无法打开</p>
-                </div></div>
-        </div>
-        
-        <!-- 底部信息条 -->
-        <div class="absolute bottom-2 left-0 right-0 text-center text-white/70 text-xs md:text-sm z-10">
-            <p>找出所有消防隐患，正确+10分，错误-5分 | 点击右上角可关闭声音</p>
-        </div>
-    </div>
-    
-    <!-- 游戏说明弹窗 -->
-    <div id="instructions" class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-xl p-6 max-w-md w-11/12 shadow-2xl z-50">
-        <h3 class="font-bold text-xl text-fire-blue mb-4 flex items-center">
-            <i class="fa fa-info-circle mr-2"></i>游戏说明
-        </h3>
-        <ul class="list-disc pl-5 space-y-2 text-gray-700">
-            <li>游戏区域为6×4网格，所有场景均正面显示</li>
-            <li>判断场景是否为消防隐患，点击移除您认为的隐患</li>
-            <li>正确识别隐患：+10分并移除卡片（提示音效）</li>
-            <li>误判非隐患：-5分并显示错误提示（错误音效）</li>
-            <li>移除所有隐患即可获胜，用时越短奖励越高</li>
-        </ul>
-        <button id="closeInstructions" class="mt-5 w-full bg-fire-blue hover:bg-fire-blue/90 text-white py-2 rounded-lg transition-all">
-            开始游戏
+</head>
+<body class="bg-fire-dark min-h-screen flex flex-col items-center p-0 m-0">
+<!-- 音效元素 -->
+<audio id="bgMusic" loop="" preload="auto" volume="0.3">
+    <source src="./mixkit-tech-house-vibes-130.mp3" type="audio/mpeg">
+</audio>
+<audio id="correctSound" preload="auto">
+    <source src="./mixkit-achievement-bell-600.mp3" type="audio/mpeg">
+</audio>
+<audio id="errorSound" preload="auto">
+    <source src="./5c89396f017e881994.mp3" type="audio/mpeg">
+</audio>
+
+<!-- 手机主容器 -->
+<div class="relative w-full h-screen overflow-hidden gradient-bg flex flex-col">
+    <!-- 声音控制按钮 -->
+    <div class="sound-control">
+        <button id="toggleSound" class="bg-white/20 hover:bg-white/30 text-white w-9 h-9 rounded-full flex items-center justify-center backdrop-blur-sm transition-all">
+            <i class="fa fa-volume-up"></i>
         </button>
     </div>
 
-    <script>
-        // 音效控制变量
-        let soundEnabled = true;
-        
-        // 获取音效元素
-        const bgMusic = document.getElementById('bgMusic');
-        const correctSound = document.getElementById('correctSound');
-        const errorSound = document.getElementById('errorSound');
-        const toggleSoundBtn = document.getElementById('toggleSound');
-        
-        // 游戏配置 - 6×4网格
-        const config = {
-            gridSize: { cols: 6, rows: 4 },  // 6列4行网格
-            totalHazards: 10,                // 隐患总数
-            hazardScore: 10,                 // 正确移除隐患得分
-            errorPenalty: 5,                 // 错误移除扣分
-            maxTime: 600                     // 最长游戏时间(秒)
-        };
+    <!-- 游戏标题区 -->
+    <div class="pt-12 pb-4 px-4 text-center">
+        <h1 class="text-[clamp(1.3rem,5vw,1.8rem)] font-bold text-white flex items-center justify-center text-shadow">
+            <i class="fa fa-fire-extinguisher mr-2 animate-pulse"></i>消防隐患消消乐
+        </h1>
+        <p class="text-blue-100 mt-1 text-sm">识别隐患，守护安全！</p>
+    </div>
 
-        // 游戏状态
-        const gameState = {
-            isPlaying: false,
-            timer: null,
-            timeUsed: 0,
-            score: 0,
-            removedHazards: 0,
-            hazardIndexes: [],    // 隐患所在的索引
-            removedIndexes: []    // 已移除的索引
-        };
+    <!-- 游戏状态面板 -->
+    <div class="bg-white/90 backdrop-blur-sm rounded-xl p-3 mx-4 mb-4 shadow-md">
+        <div class="flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="w-8 h-8 rounded-full bg-fire-blue flex items-center justify-center text-white mr-2">
+                    <i class="fa fa-clock-o text-sm"></i>
+                </div>
+                <span class="text-fire-dark text-sm">用时: <span id="timer" class="font-bold text-fire-blue">00:00</span></span>
+            </div>
+            <div class="flex items-center">
+                <div class="w-8 h-8 rounded-full bg-fire-accent flex items-center justify-center text-white mr-2">
+                    <i class="fa fa-star text-sm"></i>
+                </div>
+                <span class="text-fire-dark text-sm">分数: <span id="score" class="font-bold text-fire-accent">0</span></span>
+            </div>
+            <div class="flex items-center">
+                <div class="w-8 h-8 rounded-full bg-red-500 flex items-center justify-center text-white mr-2">
+                    <i class="fa fa-exclamation-circle text-sm"></i>
+                </div>
+                <span class="text-fire-dark text-sm">剩余: <span id="remaining" class="font-bold text-red-500">8</span></span>
+            </div>
+        </div>
+    </div>
 
-        // DOM元素
-        const gameGrid = document.getElementById('gameGrid');
-        const startBtn = document.getElementById('startBtn');
-        const resetBtn = document.getElementById('resetBtn');
-        const timerDisplay = document.getElementById('timer');
-        const scoreDisplay = document.getElementById('score');
-        const remainingDisplay = document.getElementById('remaining');
-        const instructions = document.getElementById('instructions');
-        const closeInstructions = document.getElementById('closeInstructions');
+    <!-- 游戏控制按钮 -->
+    <div class="flex gap-3 mx-4 mb-4">
+        <button id="startBtn" class="flex-1 bg-fire-accent hover:bg-fire-accent/90 text-white py-3 px-4 rounded-lg transition-all flex items-center justify-center shadow-md">
+            <i class="fa fa-play mr-2"></i>开始游戏
+        </button>
+        <button id="resetBtn" class="flex-1 bg-fire-dark hover:bg-fire-dark/90 text-white py-3 px-4 rounded-lg transition-all flex items-center justify-center shadow-md">
+            <i class="fa fa-refresh mr-2"></i>重置
+        </button>
+    </div>
 
-        // 隐患场景库
-        const hazardScenes = [
-            { name: '消防通道堆物', icon: 'fa-boxes', desc: '通道被杂物堵塞' },
-            { name: '电线乱拉乱接', icon: 'fa-bolt', desc: '违规私拉电线' },
-            { name: '易燃物靠近火源', icon: 'fa-fire', desc: '纸张靠近加热器' },
-            { name: '灭火器过期', icon: 'fa-calendar-times-o', desc: '灭火器材失效' },
-            { name: '消防栓被遮挡', icon: 'fa-tint', desc: '消防设施无法使用' },
-            { name: '安全出口锁闭', icon: 'fa-lock', desc: '紧急出口无法打开' },
-            { name: '大功率电器违规使用', icon: 'fa-plug', desc: '超负荷使用电器' },
-            { name: '堵塞安全出口', icon: 'fa-sign-out', desc: '出口被货物阻挡' },
-            { name: '明火作业无监护', icon: 'fa-burn', desc: '焊接作业无防护' },
-            { name: '消防器材缺失', icon: 'fa-exclamation-triangle', desc: '未配备灭火器' },
-            { name: '电路老化', icon: 'fa-wrench', desc: '电线绝缘层破损' },
-            { name: '仓库堆物超高', icon: 'fa-warehouse', desc: '货物遮挡喷淋' }
-        ];
+    <!-- 游戏网格区域（3列布局，适合手机） -->
+    <div class="flex-1 overflow-y-auto px-3 pb-4">
+        <div id="gameGrid" class="grid grid-cols-3 gap-2.5">
+            <!-- 卡片将通过JS动态生成 -->
+        </div>
+    </div>
 
-        // 安全场景库
-        const safeScenes = [
-            { name: '畅通消防通道', icon: 'fa-road', desc: '通道无任何阻挡' },
-            { name: '规范电器使用', icon: 'fa-plug', desc: '电器符合安全标准' },
-            { name: '灭火器定期检查', icon: 'fa-shield', desc: '器材在有效期内' },
-            { name: '消防栓正常可用', icon: 'fa-water', desc: '设施完好无遮挡' },
-            { name: '安全出口畅通', icon: 'fa-door-open', desc: '出口标识清晰' },
-            { name: '电线规范布置', icon: 'fa-cable-car', desc: '线路整齐无裸露' },
-            { name: '应急照明正常', icon: 'fa-lightbulb-o', desc: '应急灯可正常工作' },
-            { name: '禁烟区无明火', icon: 'fa-ban', desc: '禁止吸烟区域合规' },
-            { name: '消防演练定期开展', icon: 'fa-users', desc: '人员掌握灭火技能' },
-            { name: '易燃品妥善存放', icon: 'fa-archive', desc: '危险品专柜存放' },
-            { name: '消防报警正常', icon: 'fa-bell', desc: '报警系统灵敏有效' },
-            { name: '喷淋系统完好', icon: 'fa-shower', desc: '自动灭火装置正常' },
-            { name: '消防标识齐全', icon: 'fa-sign', desc: '指示清晰规范' },
-            { name: '员工持证上岗', icon: 'fa-id-card', desc: '具备消防资质' }
-        ];
+    <!-- 底部信息条 -->
+    <div class="bg-fire-dark/70 text-white/80 text-xs py-2 text-center backdrop-blur-sm">
+        <p>正确+10分 | 错误-5分 | 点击右上角关闭声音</p>
+    </div>
+</div>
 
-        // 播放音效函数
-        function playSound(audioElement) {
-            if (soundEnabled) {
-                audioElement.currentTime = 0;
-                audioElement.play().catch(e => console.log("音效播放失败:", e));
-            }
+<!-- 游戏说明弹窗 -->
+<div id="instructions" class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-xl p-5 w-[90%] max-w-sm shadow-2xl z-50">
+    <h3 class="font-bold text-lg text-fire-blue mb-3 flex items-center">
+        <i class="fa fa-info-circle mr-2"></i>游戏说明
+    </h3>
+    <ul class="list-disc pl-5 space-y-1.5 text-gray-700 text-sm">
+        <li>判断场景是否为消防隐患</li>
+        <li>点击移除您认为的隐患</li>
+        <li>正确识别：+10分并移除卡片</li>
+        <li>误判非隐患：-5分并提示</li>
+        <li>移除所有隐患即可获胜</li>
+    </ul>
+    <button id="closeInstructions" class="mt-4 w-full bg-fire-blue hover:bg-fire-blue/90 text-white py-2.5 rounded-lg transition-all">
+        开始游戏
+    </button>
+</div>
+
+<script>
+    // 音效控制变量
+    let soundEnabled = true;
+
+    // 获取音效元素
+    const bgMusic = document.getElementById('bgMusic');
+    const correctSound = document.getElementById('correctSound');
+    const errorSound = document.getElementById('errorSound');
+    const toggleSoundBtn = document.getElementById('toggleSound');
+
+    // 游戏配置（手机适配：3列5行共15个卡片）
+    const config = {
+        gridSize: { cols: 3, rows: 5 },  // 3列5行网格（适合手机）
+        totalHazards: 8,                 // 隐患总数（减少难度适应手机）
+        hazardScore: 10,                 // 正确移除隐患得分
+        errorPenalty: 5,                 // 错误移除扣分
+        maxTime: 300                     // 最长游戏时间(秒)（缩短适应手机）
+    };
+
+    // 游戏状态
+    const gameState = {
+        isPlaying: false,
+        timer: null,
+        timeUsed: 0,
+        score: 0,
+        removedHazards: 0,
+        hazardIndexes: [],    // 隐患所在的索引
+        removedIndexes: []    // 已移除的索引
+    };
+
+    // DOM元素
+    const gameGrid = document.getElementById('gameGrid');
+    const startBtn = document.getElementById('startBtn');
+    const resetBtn = document.getElementById('resetBtn');
+    const timerDisplay = document.getElementById('timer');
+    const scoreDisplay = document.getElementById('score');
+    const remainingDisplay = document.getElementById('remaining');
+    const instructions = document.getElementById('instructions');
+    const closeInstructions = document.getElementById('closeInstructions');
+
+    // 隐患场景库（精简适合手机显示）
+    const hazardScenes = [
+        { name: '通道堆物', icon: 'fa-boxes', desc: '堵塞消防通道' },
+        { name: '电线乱接', icon: 'fa-bolt', desc: '违规私拉电线' },
+        { name: '易燃物近火', icon: 'fa-fire', desc: '靠近热源' },
+        { name: '灭火器过期', icon: 'fa-calendar-times-o', desc: '器材失效' },
+        { name: '消防栓遮挡', icon: 'fa-tint', desc: '无法使用' },
+        { name: '出口锁闭', icon: 'fa-lock', desc: '安全出口' },
+        { name: '违规用电', icon: 'fa-plug', desc: '大功率电器' },
+        { name: '明火无监护', icon: 'fa-burn', desc: '作业无防护' }
+    ];
+
+    // 安全场景库（精简适合手机显示）
+    const safeScenes = [
+        { name: '通道畅通', icon: 'fa-road', desc: '无阻挡' },
+        { name: '规范用电', icon: 'fa-plug', desc: '符合标准' },
+        { name: '灭火器有效', icon: 'fa-shield', desc: '定期检查' },
+        { name: '消防栓可用', icon: 'fa-water', desc: '无遮挡' },
+        { name: '出口畅通', icon: 'fa-door-open', desc: '标识清晰' },
+        { name: '电线规范', icon: 'fa-cable-car', desc: '线路整齐' },
+        { name: '应急灯正常', icon: 'fa-lightbulb-o', desc: '可工作' },
+        { name: '禁烟区合规', icon: 'fa-ban', desc: '无明火' }
+    ];
+
+    // 播放音效函数
+    function playSound(audioElement) {
+        if (soundEnabled) {
+            audioElement.currentTime = 0;
+            audioElement.play().catch(e => console.log("音效播放失败:", e));
         }
+    }
 
-        // 切换声音开关
-        function toggleSound() {
-            soundEnabled = !soundEnabled;
-            if (soundEnabled) {
-                toggleSoundBtn.innerHTML = '<i class="fa fa-volume-up"></i>';
-                if (gameState.isPlaying) {
-                    bgMusic.play().catch(e => console.log("背景音乐播放失败:", e));
-                }
-            } else {
-                toggleSoundBtn.innerHTML = '<i class="fa fa-volume-off"></i>';
-                bgMusic.pause();
-            }
-        }
-
-        // 初始化游戏网格
-        function initGrid() {
-            gameGrid.innerHTML = '';
-            gameState.hazardIndexes = [];
-            const totalCells = config.gridSize.cols * config.gridSize.rows;
-            
-            // 随机生成隐患位置（不重复）
-            while (gameState.hazardIndexes.length < config.totalHazards) {
-                const index = Math.floor(Math.random() * totalCells);
-                if (!gameState.hazardIndexes.includes(index)) {
-                    gameState.hazardIndexes.push(index);
-                }
-            }
-
-            // 生成所有卡片
-            for (let i = 0; i < totalCells; i++) {
-                const isHazard = gameState.hazardIndexes.includes(i);
-                
-                // 选择场景数据
-                const sceneData = isHazard 
-                    ? hazardScenes[Math.floor(Math.random() * hazardScenes.length)]
-                    : safeScenes[Math.floor(Math.random() * safeScenes.length)];
-
-                // 创建卡片
-                const card = document.createElement('div');
-                card.className = `bg-fire-card rounded-lg p-2 shadow-md card-hover card-glow flex flex-col items-center justify-center h-24 md:h-28 cursor-pointer border border-fire-light/20`;
-                card.dataset.index = i;
-                card.dataset.isHazard = isHazard;
-                
-                // 卡片内容
-                card.innerHTML = `
-                    <i class="fa ${sceneData.icon} text-2xl md:text-3xl text-fire-blue mb-1"></i>
-                    <h3 class="text-center font-medium text-xs md:text-sm mb-0.5">${sceneData.name}</h3>
-                    <p class="text-center text-[10px] md:text-xs text-gray-600">${sceneData.desc}</p>
-                `;
-
-                // 绑定点击事件
-                card.addEventListener('click', () => handleCardRemoval(card));
-                
-                gameGrid.appendChild(card);
-            }
-
-            updateRemaining();
-        }
-
-        // 处理卡片移除
-        function handleCardRemoval(card) {
-            const index = parseInt(card.dataset.index);
-            const isHazard = card.dataset.isHazard === 'true';
-
-            // 游戏未开始或已移除的卡片不响应
-            if (!gameState.isPlaying || gameState.removedIndexes.includes(index)) {
-                return;
-            }
-
-            // 判断是否为隐患
-            if (isHazard) {
-                // 正确：播放成功音效
-                playSound(correctSound);
-                
-                // 执行移除动画
-                card.classList.add('remove-animation');
-                gameState.removedIndexes.push(index);
-                gameState.removedHazards++;
-                gameState.score += config.hazardScore;
-
-                // 检查是否所有隐患都被移除
-                if (gameState.removedHazards === config.totalHazards) {
-                    endGame(true);
-                }
-            } else {
-                // 错误：播放错误音效
-                playSound(errorSound);
-                
-                // 执行错误提示动画
-                card.classList.add('error-shake');
-                gameState.score = Math.max(0, gameState.score - config.errorPenalty);
-                
-                // 移除错误动画类
-                setTimeout(() => {
-                    card.classList.remove('error-shake');
-                }, 500);
-            }
-
-            // 更新显示
-            updateScore();
-            updateRemaining();
-        }
-
-        // 开始游戏
-        function startGame() {
-            // 隐藏说明弹窗
-            instructions.classList.add('hidden');
-            
-            // 重置游戏状态
-            gameState.isPlaying = true;
-            gameState.score = 0;
-            gameState.removedHazards = 0;
-            gameState.removedIndexes = [];
-            gameState.timeUsed = 0;
-
-            // 播放背景音乐
-            if (soundEnabled) {
+    // 切换声音开关
+    function toggleSound() {
+        soundEnabled = !soundEnabled;
+        if (soundEnabled) {
+            toggleSoundBtn.innerHTML = '<i class="fa fa-volume-up"></i>';
+            if (gameState.isPlaying) {
                 bgMusic.play().catch(e => console.log("背景音乐播放失败:", e));
             }
-
-            // 初始化网格
-            initGrid();
-
-            // 启动计时器
-            if (gameState.timer) clearInterval(gameState.timer);
-            gameState.timer = setInterval(() => {
-                gameState.timeUsed++;
-                updateTimer();
-                
-                // 超时结束
-                if (gameState.timeUsed >= config.maxTime) {
-                    endGame(false);
-                }
-            }, 1000);
-
-            // 更新显示
-            updateScore();
-            startBtn.disabled = true;
-            startBtn.classList.add('opacity-50', 'cursor-not-allowed');
-        }
-
-        // 结束游戏
-        function endGame(isWin) {
-            clearInterval(gameState.timer);
-            gameState.isPlaying = false;
-            startBtn.disabled = false;
-            startBtn.classList.remove('opacity-50', 'cursor-not-allowed');
-            
-            // 暂停背景音乐
+        } else {
+            toggleSoundBtn.innerHTML = '<i class="fa fa-volume-off"></i>';
             bgMusic.pause();
+        }
+    }
 
-            // 显示结果
-            if (isWin) {
-                // 胜利：计算时间奖励
-                const timeBonus = Math.max(0, Math.floor((config.maxTime - gameState.timeUsed) / 15));
-                gameState.score += timeBonus;
-                updateScore();
-                alert(`🎉 恭喜您成功移除所有隐患！\n最终得分：${gameState.score}分（含时间奖励${timeBonus}分）\n用时：${formatTime(gameState.timeUsed)}`);
-            } else {
-                alert(`⏰ 游戏时间结束！\n已移除${gameState.removedHazards}/${config.totalHazards}个隐患\n最终得分：${gameState.score}分`);
+    // 初始化游戏网格（手机适配）
+    function initGrid() {
+        gameGrid.innerHTML = '';
+        gameState.hazardIndexes = [];
+        const totalCells = config.gridSize.cols * config.gridSize.rows;
+
+        // 随机生成隐患位置（不重复）
+        while (gameState.hazardIndexes.length < config.totalHazards) {
+            const index = Math.floor(Math.random() * totalCells);
+            if (!gameState.hazardIndexes.includes(index)) {
+                gameState.hazardIndexes.push(index);
             }
         }
 
-        // 格式化时间显示
-        function formatTime(seconds) {
-            const mins = Math.floor(seconds / 60);
-            const secs = seconds % 60;
-            return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+        // 生成所有卡片（手机触控友好尺寸）
+        for (let i = 0; i < totalCells; i++) {
+            const isHazard = gameState.hazardIndexes.includes(i);
+
+            // 选择场景数据
+            const sceneData = isHazard
+                ? hazardScenes[Math.floor(Math.random() * hazardScenes.length)]
+                : safeScenes[Math.floor(Math.random() * safeScenes.length)];
+
+            // 创建卡片（适合手指点击的尺寸）
+            const card = document.createElement('div');
+            card.className = `bg-fire-card rounded-lg p-3 shadow-md card-hover card-glow flex flex-col items-center justify-center h-28 cursor-pointer border border-fire-light/20`;
+            card.dataset.index = i;
+            card.dataset.isHazard = isHazard;
+
+            // 卡片内容（手机适配的文字大小）
+            card.innerHTML = `
+                    <i class="fa ${sceneData.icon} text-3xl text-fire-blue mb-1.5"></i>
+                    <h3 class="text-center font-medium text-sm mb-0.5">${sceneData.name}</h3>
+                    <p class="text-center text-xs text-gray-600">${sceneData.desc}</p>
+                `;
+
+            // 绑定点击事件（适合触摸操作）
+            card.addEventListener('click', () => handleCardRemoval(card));
+
+            gameGrid.appendChild(card);
         }
 
-        // 更新计时器显示
-        function updateTimer() {
-            timerDisplay.textContent = formatTime(gameState.timeUsed);
+        updateRemaining();
+    }
+
+    // 处理卡片移除（手机触控反馈）
+    function handleCardRemoval(card) {
+        const index = parseInt(card.dataset.index);
+        const isHazard = card.dataset.isHazard === 'true';
+
+        // 游戏未开始或已移除的卡片不响应
+        if (!gameState.isPlaying || gameState.removedIndexes.includes(index)) {
+            return;
         }
 
-        // 更新分数显示
-        function updateScore() {
-            scoreDisplay.textContent = gameState.score;
-        }
+        // 判断是否为隐患
+        if (isHazard) {
+            // 正确：播放成功音效
+            playSound(correctSound);
 
-        // 更新剩余隐患显示
-        function updateRemaining() {
-            remainingDisplay.textContent = config.totalHazards - gameState.removedHazards;
-        }
+            // 执行移除动画
+            card.classList.add('remove-animation');
+            gameState.removedIndexes.push(index);
+            gameState.removedHazards++;
+            gameState.score += config.hazardScore;
 
-        // 绑定事件
-        startBtn.addEventListener('click', startGame);
-        resetBtn.addEventListener('click', startGame);
-        closeInstructions.addEventListener('click', startGame);
-        toggleSoundBtn.addEventListener('click', toggleSound);
+            // 检查是否所有隐患都被移除
+            if (gameState.removedHazards === config.totalHazards) {
+                endGame(true);
+            }
+        } else {
+            // 错误：播放错误音效
+            playSound(errorSound);
 
-        // 初始化
-        window.addEventListener('load', () => {
-            initGrid();
-            // 显示游戏说明
+            // 执行错误提示动画
+            card.classList.add('error-shake');
+            gameState.score = Math.max(0, gameState.score - config.errorPenalty);
+
+            // 移除错误动画类
             setTimeout(() => {
-                instructions.classList.remove('hidden');
+                card.classList.remove('error-shake');
             }, 500);
-        });
-    </script>
+        }
 
+        // 更新显示
+        updateScore();
+        updateRemaining();
+    }
 
-<div id="aiAssistRoot"></div></body></html>
+    // 开始游戏
+    function startGame() {
+        // 隐藏说明弹窗
+        instructions.classList.add('hidden');
+
+        // 重置游戏状态
+        gameState.isPlaying = true;
+        gameState.score = 0;
+        gameState.removedHazards = 0;
+        gameState.removedIndexes = [];
+        gameState.timeUsed = 0;
+
+        // 播放背景音乐
+        if (soundEnabled) {
+            bgMusic.play().catch(e => console.log("背景音乐播放失败:", e));
+        }
+
+        // 初始化网格
+        initGrid();
+
+        // 启动计时器
+        if (gameState.timer) clearInterval(gameState.timer);
+        gameState.timer = setInterval(() => {
+            gameState.timeUsed++;
+            updateTimer();
+
+            // 超时结束
+            if (gameState.timeUsed >= config.maxTime) {
+                endGame(false);
+            }
+        }, 1000);
+
+        // 更新显示
+        updateScore();
+        startBtn.disabled = true;
+        startBtn.classList.add('opacity-50', 'cursor-not-allowed');
+    }
+
+    // 结束游戏
+    function endGame(isWin) {
+        clearInterval(gameState.timer);
+        gameState.isPlaying = false;
+        startBtn.disabled = false;
+        startBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+
+        // 暂停背景音乐
+        bgMusic.pause();
+
+        // 显示结果（手机适配的弹窗文字）
+        if (isWin) {
+            // 胜利：计算时间奖励
+            const timeBonus = Math.max(0, Math.floor((config.maxTime - gameState.timeUsed) / 10));
+            gameState.score += timeBonus;
+            updateScore();
+            alert(`🎉 恭喜获胜！\n得分：${gameState.score}分（含奖励${timeBonus}分）\n用时：${formatTime(gameState.timeUsed)}`);
+        } else {
+            alert(`⏰ 时间到！\n已移除${gameState.removedHazards}/${config.totalHazards}个隐患\n得分：${gameState.score}分`);
+        }
+    }
+
+    // 格式化时间显示
+    function formatTime(seconds) {
+        const mins = Math.floor(seconds / 60);
+        const secs = seconds % 60;
+        return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+    }
+
+    // 更新计时器显示
+    function updateTimer() {
+        timerDisplay.textContent = formatTime(gameState.timeUsed);
+    }
+
+    // 更新分数显示
+    function updateScore() {
+        scoreDisplay.textContent = gameState.score;
+    }
+
+    // 更新剩余隐患显示
+    function updateRemaining() {
+        remainingDisplay.textContent = config.totalHazards - gameState.removedHazards;
+    }
+
+    // 绑定事件（适合触摸操作）
+    startBtn.addEventListener('click', startGame);
+    resetBtn.addEventListener('click', startGame);
+    closeInstructions.addEventListener('click', startGame);
+    toggleSoundBtn.addEventListener('click', toggleSound);
+
+    // 初始化
+    window.addEventListener('load', () => {
+        initGrid();
+        // 显示游戏说明
+        setTimeout(() => {
+            instructions.classList.remove('hidden');
+        }, 500);
+    });
+</script>
+</body>
+</html>
